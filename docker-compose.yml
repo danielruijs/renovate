@@ -1,0 +1,13 @@
+services:
+  renovate:
+    image: renovate/renovate:latest
+    container_name: renovate
+    restart: "no"
+
+    environment:
+      LOG_LEVEL: info
+      TZ: Europe/Stockholm
+      RENOVATE_TOKEN: ${RENOVATE_TOKEN}
+
+    volumes:
+      - ./config.js:/usr/src/app/config.js
